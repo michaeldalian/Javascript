@@ -6,50 +6,43 @@
     <title>Page de Mike</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
 
   <body>
     <div>
-      Voici Le nombre aléatoire
+      <!-- Rounded switch -->
+      <h4>
+        pluie
+        <label class="switch">
+          <input type="checkbox" name="pluie" id="pluie" />
+          <span class="slider round"></span>
+        </label>
+      </h4>
+      <br />
+      <h4>
+        chaud
+        <label class="switch">
+          <input type="checkbox" name="chaud" id="chaud" />
+          <span class="slider round"></span>
+        </label>
+      </h4>
 
-      <input
-        type="text"
-        name="nbAle"
-        id="nbAle"
-        placeholder="Nombre aléatoire"
-        value="1"
-      />
+      <h4>
+        Beau
+        <label class="switch">
+          <input type="checkbox" name="beau" id="beau" />
+          <span class="slider round"></span>
+        </label>
+      </h4>
+
+      <h4>
+        froid
+        <label class="switch">
+          <input type="checkbox" name="froid" id="froid" />
+          <span class="slider round"></span>
+        </label>
+      </h4>
     </div>
-
-    <!-- <form action="Exo1.php" method="get">
-        <input type="text" name="firstName" id="firstName" placeholder="Prénom" value="Mickael" />
-        <input type="text" name="lastName" id="lastName" placeholder="Nom" value="Kael" />
-        <input type="date" name="dateN" id="dateN" value="1976-05-22" />
-        <select name="civility" id="civility">
-            <option value="mr">Mr</option>
-            <option value="mme">Mme</option>
-            <option value="autre">Autre</option>
-        </select>
-        <input type="submit" name="submit" value="Get" />
-    </form>
-
-    <form action="Exo1.php" method="post" value="Post">
-        <input type="text" name="firstName" id="firstName" placeholder="Prénom" value="Mickael" />
-        <input type="text" name="lastName" id="lastName" placeholder="Nom" value="Kael" />
-        <input type="date" name="dateN" id="dateN" value="1976-05-22" />
-        <select name="civility" id="civility">
-            <option value="mr">Mr</option>
-            <option value="mme">Mme</option>
-            <option value="autre">Autre</option>
-        </select>
-        <input type="submit" name="submit" value="Post" />
-    </form> -->
-
-    <!-- Rounded switch
-    <label class="switch">
-        <input type="checkbox" name="getPost" id="getPost">
-        <span class="slider round"></span>
-    </label> -->
   </body>
 </html>

@@ -48,7 +48,41 @@ const main = () => {
 
       console.log(_monNombre);
 
-    case 2: // Test1
+    case 2: // Test2
+      //beau+chaud=short
+      //Pleut et chaud = parap
+      //Pleut et froid=manteau
+
+      let chkChaud = document.getElementById("chaud");
+      let _chaud = chkChaud.checked;
+      let _beau = false;
+      let _froid = !_chaud;
+      let _pluie = document.getElementById("pluie").checked;
+
+      //si évenement coché "chaud" change valeur affichée
+      chkChaud.addEventListener("click", function clicBox() {
+        _chaud = chkChaud.checked;
+        _froid = !_chaud;
+        promptResult();
+        //console.log(`Check ${_chaud}`);
+      });
+
+      //Affiche résultat
+      function promptResult() {
+        if (_chaud && _beau) {
+          console.log("short");
+        }
+
+        if (_pluie) {
+          if (_chaud) {
+            console.log("parap");
+          }
+
+          if (_froid) {
+            console.log("manteau");
+          }
+        }
+      }
 
     default:
   }
