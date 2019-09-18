@@ -1,6 +1,11 @@
 const main = () => {
+  //
+  //
   // A changer manuellement pour choisir son test
-  const TestAEffectuer = 2;
+  const TestAEffectuer = 3;
+  //
+  //
+  //
   switch (TestAEffectuer) {
     case 1: // Test1
       let _monNombre;
@@ -84,6 +89,79 @@ const main = () => {
         }
       }
 
+    case 3: // Test3 - chifumi
+      // F>P>C
+      // commencer par les cas spéciaux - prévoir 3 manches
+
+      // Compteur de points ordi/utilisateur
+      let tabPoints = [0, 0];
+
+      for (let i = 0; i < 3; i++) {
+        // definition de la fonction comparer
+        // qui renvoie le nom de l'élément gagnant, entre les deux passés en paramètres
+        function comparer(choix1, choix2) {
+          if (choix1 === choix2) {
+            console.log("Egalité:", tabPoints);
+            return "Egalité !";
+          } else if (choix1 === "pierre") {
+            if (choix2 === "ciseaux") {
+              tabPoints[0]++;
+              console.log("=> ScoreU++:", tabPoints);
+              return "pierre";
+            } else if (choix2 === "feuille") {
+              tabPoints[1]++;
+              console.log("=> ScoreO++:", tabPoints);
+              return "feuille";
+            }
+          } else if (choix1 === "feuille") {
+            if (choix2 === "pierre") {
+              tabPoints[0]++;
+              console.log("=> ScoreU++", tabPoints);
+              return "feuille";
+            } else if (choix2 === "ciseaux") {
+              tabPoints[1]++;
+              console.log("=> ScoreO++:", tabPoints);
+              return "ciseaux";
+            }
+          } else if (choix1 === "ciseaux") {
+            if (choix2 === "pierre") {
+              tabPoints[1]++;
+              console.log("=> ScoreO++:", tabPoints);
+              return "pierre";
+            } else if (choix2 === "feuille") {
+              tabPoints[0]++;
+              console.log("=> ScoreU", tabPoints);
+              return "ciseaux";
+            }
+          }
+        }
+
+        // Choix ordi : récup valeur tableau au hazard
+        let tChoix = ["pierre", "feuille", "ciseaux"];
+        function tablAzar(tab) {
+          let choixOrdi = Math.round(Math.random() * tab.length);
+          return tab[choixOrdi];
+        }
+
+        // début de partie
+        const choixUtilisateur = prompt(
+          "Choisissez-vous pierre, feuille, ou ciseaux ?"
+        );
+
+        let choixOrdi = tablAzar(tChoix);
+        let resultat = comparer(choixUtilisateur, choixOrdi);
+      }
+
+      if (tabPoints[0] == tabPoints[1]) {
+        resultat = "Egalité !";
+      } else if (tabPoints[0] > tabPoints[1]) {
+        resultat = "Vous avez gagné !";
+      } else {
+        resultat = "Vous avez perdu !";
+      }
+
+      // console.log("Ordinateur:");
+      console.log(resultat);
     default:
   }
 };
